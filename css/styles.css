@@ -24,6 +24,9 @@ ul {
   margin: 0;
   padding: 0;
 }
+img {
+  display: block;
+}
 .container {
   width: 1200px;
   padding: 0 15px;
@@ -33,11 +36,23 @@ ul {
 .section {
   padding-bottom: 94px;
 }
+.visually-hidden {
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+}
 /*header*/
 header {
   border-bottom: 1px solid #ececec;
 }
-
+.head-container {
+  display: flex;
+  align-items: center;
+}
+.head-con {
+  display: flex;
+  align-items: center;
+}
 .header-logo {
   color: #000;
   font-family: Raleway;
@@ -49,10 +64,6 @@ header {
 }
 .header-logo span {
   color: var(--selection-color);
-}
-.head-con {
-  display: flex;
-  align-items: center;
 }
 
 /*header-navigation*/
@@ -113,6 +124,7 @@ header {
 .hero {
   text-align: center;
   background-color: #2f303a;
+  padding: 200px 0;
 }
 .hero h1 {
   width: 696px;
@@ -157,10 +169,12 @@ header {
 
 .advantages-items {
   display: flex;
-  justify-content: space-between;
 }
 .advantages-items .item {
   width: 270px;
+}
+.advantages-items .item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .advantages-head {
@@ -229,8 +243,10 @@ header {
 .team-items .item {
   border-radius: 0px 0px 4px 4px;
 }
+.team-box {
+  padding: 30px 0;
+}
 .team-name {
-  margin-top: 30px;
   text-align: center;
 
   font-size: 16px;
@@ -241,11 +257,9 @@ header {
 }
 .team-profession {
   margin-top: 10px;
-  margin-bottom: 30px;
-  color: var(--text-color);
-
   text-align: center;
 
+  color: var(--text-color);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -292,7 +306,7 @@ header {
   border-bottom: 1px solid #eee;
   border-right: 1px solid #eee;
   border-left: 1px solid #eee;
-  padding-top: 20px;
+  padding: 20px 24px;
 }
 .portfolio-posters .item:not(:nth-child(3n)) {
   margin-right: 30px;
@@ -302,7 +316,7 @@ header {
 }
 
 .portfolio-head {
-  margin: 0 24px 4px;
+  margin-bottom: 4px;
 
   color: var(--head-color);
   font-size: 18px;
@@ -312,8 +326,6 @@ header {
   letter-spacing: 1.08px;
 }
 .portfolio-text {
-  margin: 0 24px 20px;
-
   color: var(--text-color);
   font-size: 16px;
   font-style: normal;
@@ -326,11 +338,10 @@ header {
 
 footer {
   background: #2f303a;
-  height: 251px;
+  padding: 60px 0;
 }
 .footer-logo {
   display: inline-block;
-  margin-top: 60px;
 
   color: #fff;
   font-family: Raleway;
@@ -343,7 +354,8 @@ footer {
 .footer-logo span {
   color: var(--selection-color);
 }
-.footer-items {
+
+.footer-address {
   margin-top: 28px;
 }
 .footer-items .item:not(:last-child) {
